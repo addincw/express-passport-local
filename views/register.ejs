@@ -1,0 +1,75 @@
+<div class="card">
+    <div class="tabs is-centered">
+        <ul>
+            <li>
+                <a href="/auth/login"> Login </a>
+            </li>
+            <li class="is-active">
+                <a> Register </a>
+            </li>
+        </ul>
+    </div>
+    <form method="POST" action="/auth/register">
+        <div class="card-content">
+            <div class="field">
+                <p class="control has-icons-left">
+                    <input
+                        class="input <%= (typeof errors != 'undefined' && (errors.name != undefined)) ? 'is-danger' : '' %>"
+                        name="name"
+                        type="text"
+                        placeholder="Name"
+                        value="<%= (typeof data != 'undefined' && (data.name != 'undefined')) ? data.name : '' %>"
+                        >
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-user"></i>
+                    </span>
+                </p>
+                <p class="help is-danger"><%= (typeof errors != 'undefined' && (errors.name != undefined)) ? errors.name : '' %></p>
+            </div>
+            <div class="field">
+                <p class="control has-icons-left">
+                    <input
+                        class="input <%= (typeof errors != 'undefined' && (errors.email != undefined)) ? 'is-danger' : '' %>"
+                        name="email"
+                        type="email"
+                        placeholder="Email"
+                        value="<%= (typeof data != 'undefined' && (data.email != 'undefined')) ? data.email : '' %>"
+                        >
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                </p>
+                <p class="help is-danger"><%= (typeof errors != 'undefined' && (errors.email != undefined)) ? errors.email : '' %></p>
+            </div>
+            <div class="field">
+                <p class="control has-icons-left">
+                    <input
+                        class="input <%= (typeof errors != 'undefined' && (errors.password != undefined)) ? 'is-danger' : '' %>"
+                        name="password"
+                        type="password"
+                        placeholder="Password">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                </p>
+                <p class="help is-danger"><%= (typeof errors != 'undefined' && (errors.password != undefined)) ? errors.password : '' %></p>
+            </div>
+            <div class="field">
+                <p class="control has-icons-left">
+                    <input
+                        class="input <%= (typeof errors != 'undefined' && (errors.re_password != undefined)) ? 'is-danger' : '' %>"
+                        name="re_password"
+                        type="password"
+                        placeholder="Re-Password">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                </p>
+                <p class="help is-danger"><%= (typeof errors != 'undefined' && (errors.re_password != undefined)) ? errors.re_password : '' %></p>
+            </div>
+        </div>
+        <footer class="card-footer">
+            <input class="button is-link is-fullwidth" type="submit" value="Register">
+        </footer>
+    </form>
+</div>

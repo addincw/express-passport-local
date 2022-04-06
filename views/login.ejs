@@ -1,0 +1,35 @@
+<div class="card">
+    <div class="tabs is-centered">
+        <ul>
+            <li class="is-active">
+                <a> Login </a>
+            </li>
+            <li>
+                <a href="/auth/register"> Register </a>
+            </li>
+        </ul>
+    </div>
+    <form method="POST" action="/auth/login">
+        <div class="card-content">
+            <div class="field">
+                <p class="control has-icons-left">
+                    <input class="input" name="email" type="email" placeholder="Email">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                </p>
+            </div>
+            <div class="field">
+                <p class="control has-icons-left">
+                    <input class="input" name="password" type="password" placeholder="Password">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <footer class="card-footer">
+            <input type="submit" class="button is-link is-fullwidth" value="Login">
+        </footer>
+    </form>
+</div>
